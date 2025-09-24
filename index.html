@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Castelan — Desenvolvedor</title>
+  <meta name="description"
+    content="Site pessoal de Castelan. Desenvolvedor de software, apaixonado por tecnologia e bons produtos.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Castelan home">
+        <span class="brand-name">castelan</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="nav" class="nav" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Olá, eu sou o <span class="accent">Castelan</span>.</h1>
+          <p class="subtitle">Desenvolvo produtos digitais com foco em performance, acessibilidade e uma ótima
+            experiência de uso.</p>
+          <div class="cta-group">
+            <a class="btn primary" href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
+              aria-label="Vamos conversar no WhatsApp">
+              💬 Vamos conversar no WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-inner">
+            <img src="Gabriel Castelan.jpeg" alt="Imagem de Gabriel Castelan">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Sobre mim</h2>
+          <p>Sou desenvolvedor de software com experiência em front‑end e back‑end, criando soluções escaláveis, seguras
+            e fáceis de manter. Gosto de interfaces limpas, código claro e entregar valor rapidamente.</p>
+          <p>Trabalho com JavaScript/TypeScript, Node.js e arquiteturas modernas.</p>
+        </div>
+        <ul class="feature-list">
+          <li>Sistemas Web</li>
+          <li>Acessibilidade (a11y)</li>
+          <li>Design Systems</li>
+          <li>APIs REST/GraphQL</li>
+          <li>Observabilidade</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container">
+        <div class="contact-cta">
+          <h2>Vamos conversar?</h2>
+          <p>Me chame no WhatsApp e conte sobre sua ideia ou projeto.</p>
+          <a class="btn primary large" href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
+            aria-label="WhatsApp CTA">
+            💬 Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Synapse. Todos os direitos reservados.</p>
+      <div class="socials">
+        <a href="mailto:contato@castelan.dev.br" aria-label="Enviar email">Email</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
+          aria-label="WhatsApp">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
