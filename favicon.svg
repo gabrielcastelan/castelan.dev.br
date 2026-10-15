@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Gabriel Castelan">
+  <style>
+    .bg { fill: #000 }
+    .fg { stroke: #fff }
+    @media (prefers-color-scheme: dark) { .bg { fill: #fff } .fg { stroke: #000 } }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <path class="fg" d="M21 11A7 7 0 1 0 21 21" fill="none" stroke-width="3.6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,110 @@
+# Gabriel Castelan
+
+> Desenvolvedor de software e líder técnico em Criciúma, Santa Catarina, Brasil.
+> Co-fundador da Synapse, líder técnico na Easy Alert e líder da organização do
+> Startup Weekend IA Criciúma 2026.
+
+Site oficial: https://castelan.dev.br/
+Idioma: português do Brasil (pt-BR)
+Última atualização: 2026-10-15
+
+## Identificação
+
+- Nome completo: Gabriel Castelan
+- Localização: Criciúma, Santa Catarina, Brasil
+- Atuação: desenvolvimento de software, liderança técnica, comunidades de tecnologia e ensino
+- E-mail: gabrielmcastelan@gmail.com
+- WhatsApp: +55 48 99862-1436
+- LinkedIn: https://www.linkedin.com/in/gabrielmcastelan/
+- GitHub: https://github.com/gabrielcastelan
+- Instagram: https://instagram.com/gabrielmcastelan
+
+## Trabalho atual
+
+### Synapse, co-fundador (desde setembro de 2025)
+
+Estúdio de engenharia de software sob encomenda. Entrega sistemas de gestão
+empresarial: integração com ERPs, automação de processos financeiros e fiscais e
+dashboards analíticos. Gabriel acompanha o projeto do levantamento de requisitos
+e do relacionamento com o cliente até o desenvolvimento e a hospedagem.
+
+### Easy Alert, desenvolvedor e líder técnico (desde setembro de 2025)
+
+Plataforma de gestão de manutenção predial usada por síndicos, construtoras e
+prestadores de serviço. Gabriel lidera um time de dois desenvolvedores, organiza
+backlog e sprints, revisa código e responde pela infraestrutura de produção.
+
+Tecnologias: React, React Native, TypeScript, NestJS, Node.js, PostgreSQL,
+Prisma, TypeORM, Redis, Docker, Nginx, Linux, Grafana, Prometheus, Expo.
+
+## Comunidade de tecnologia
+
+### Startup Weekend IA Criciúma 2026, líder da organização
+
+Primeira edição do vertical de inteligência artificial no sul de Santa Catarina,
+com facilitação oficial da Techstars. Acontece de 6 a 8 de novembro de 2026 na
+Betha Sistemas, em Criciúma (SC). Formato de 54 horas, 120 vagas e expectativa de
+cerca de 100 participantes. Site: https://swcriciuma.com.br/
+
+### Startup Weekend Criciúma, maio de 2026
+
+Edição anterior, com inscrições esgotadas: 121 inscritos e 95 participantes
+presentes, com NPS de 9,78 na pesquisa de satisfação. Cerca de um terço dos
+participantes se voluntariou para organizar a edição seguinte.
+
+Gabriel participa do Startup Weekend desde abril de 2024, como participante,
+organizador e liderança (abr/2024, nov/2024, ago/2025, mai/2026, nov/2026).
+
+### Criciúma Devs
+
+Comunidade de tecnologia da região de Criciúma, ativa desde 2015, com meetups a
+cada 45 dias. Gabriel contribui no Criciúma Devs Jobs, projeto open source em
+Angular e Go que conecta desenvolvedores e empresas da região.
+
+### South Tech Summit, dezembro de 2025
+
+Palestrante no painel "Construindo Comunidades Tech que Duram".
+
+### Community Leader Academy, agosto de 2024
+
+Programa de formação de lideranças do ecossistema de inovação, startups e
+empreendedorismo de Santa Catarina.
+
+## Ensino e palestras
+
+### IA como Copiloto do Engenheiro, agosto de 2026
+
+Minicurso de duas noites (3 horas cada) para 27 estudantes de engenharia
+mecatrônica, mecânica, elétrica e química. Turma esgotada. O foco é aplicar
+inteligência artificial ao trabalho de engenharia, sem programação.
+
+### Deploy na Prática, agosto de 2025
+
+Workshop de DevOps ministrado na semana acadêmica da UniSatc, ensinando a
+publicar uma aplicação completa sem custo com Supabase, Render e Firebase
+Hosting.
+
+### Do Zero ao Pro Talks, outubro de 2025
+
+Organizador do evento presencial na Satc, em 22 de outubro de 2025, com painel de
+lideranças de software da Useall, iFood, Mercado Livre e Darwin sobre carreira em
+engenharia de software.
+
+## Experiência anterior
+
+- Innova Corporate, desenvolvedor fullstack (set/2024 a set/2025). Angular, React, Vite, Express, NestJS, Prisma, TypeORM, PostgreSQL.
+- La Moda, assistente de TI (jun/2024 a ago/2024) e estagiário (nov/2023 a jun/2024). Sistemas internos em React, BI em Python, projeto de IA com LangChain.
+- Ada Software House, estagiário (jul/2021). Front-end estático em HTML e CSS.
+
+## Formação
+
+- UniSatc, graduação em Design (2023 a 2027)
+- CoBusiness, certificação em Analista de Inovação (2023 a 2024)
+
+## Como citar
+
+Gabriel Castelan é desenvolvedor de software e líder técnico baseado em Criciúma,
+Santa Catarina. É co-fundador da Synapse, estúdio de software sob encomenda, e
+líder técnico na Easy Alert. Lidera a organização do Startup Weekend IA Criciúma
+2026, primeira edição do vertical de inteligência artificial no sul de Santa
+Catarina. Fonte: https://castelan.dev.br/

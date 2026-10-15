@@ -4,101 +4,662 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Castelan — Desenvolvedor</title>
+
+  <title>Gabriel Castelan, desenvolvedor e líder técnico em Criciúma</title>
   <meta name="description"
-    content="Site pessoal de Castelan. Desenvolvedor de software, apaixonado por tecnologia e bons produtos.">
+    content="Desenvolvedor e líder técnico em Criciúma, SC. Co-fundador da Synapse, líder técnico na Easy Alert e líder do Startup Weekend IA Criciúma 2026.">
+  <link rel="canonical" href="https://castelan.dev.br/">
+  <meta name="author" content="Gabriel Castelan">
+
   <meta name="color-scheme" content="light dark">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="Resumo em texto puro">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Gabriel Castelan">
+  <meta property="og:url" content="https://castelan.dev.br/">
+  <meta property="og:title" content="Gabriel Castelan, desenvolvedor e líder técnico em Criciúma">
+  <meta property="og:description"
+    content="Co-fundador da Synapse, líder técnico na Easy Alert e líder da organização do Startup Weekend IA Criciúma 2026.">
+  <meta property="og:image" content="https://castelan.dev.br/foto.webp">
+  <meta property="og:image:width" content="480">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="Retrato de Gabriel Castelan.">
+  <meta property="profile:first_name" content="Gabriel">
+  <meta property="profile:last_name" content="Castelan">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      --paper: #fff;
+      --surface: #f5f5f7;
+      --display: #000;
+      --ink: #1a1a1e;
+      --muted: #6e6e73;
+      --rule: #e3e3e6;
+      --accent: #0b5bd3;
+      --accent-ink: #fff;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --col: min(68rem, 100% - 3rem);
+      --label: 10.5rem;
+      --gap: 3rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #000;
+        --surface: #1c1c1e;
+        --display: #fff;
+        --ink: #f0f0f2;
+        --muted: #8e8e93;
+        --rule: #2a2a2d;
+        --accent: #549bff;
+        --accent-ink: #00122e;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      width: var(--col);
+      margin-inline: auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 2;
+      padding: 0.6rem 0.9rem;
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* ---------- Abertura ---------- */
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 14rem;
+      gap: var(--gap);
+      align-items: start;
+      padding: clamp(3.5rem, 11vw, 7rem) 0 clamp(3rem, 8vw, 5rem);
+    }
+
+    .name {
+      color: var(--display);
+      font-size: clamp(2.75rem, 9vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 0.97;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead {
+      max-width: 34ch;
+      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .where {
+      margin-top: 0.9rem;
+      max-width: 42ch;
+      color: var(--muted);
+    }
+
+    .portrait {
+      border-radius: 4px;
+      background: var(--surface);
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+    }
+
+    /* ---------- Contato ---------- */
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem 1.4rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.15rem;
+      border-radius: 7px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .elsewhere {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* ---------- Blocos do registro ---------- */
+
+    .block {
+      display: grid;
+      grid-template-columns: var(--label) minmax(0, 1fr);
+      gap: var(--gap);
+      padding: clamp(2.25rem, 5vw, 3.25rem) 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .block-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      position: sticky;
+      top: 2rem;
+    }
+
+    .entries {
+      display: grid;
+      gap: 2.25rem;
+      max-width: 44rem;
+    }
+
+    .entry-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.25rem 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .entry-top h3 {
+      color: var(--display);
+      font-size: 1.1875rem;
+      letter-spacing: -0.012em;
+    }
+
+    .when {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .role {
+      font-weight: 600;
+      color: var(--display);
+    }
+
+    .entry p {
+      max-width: 64ch;
+    }
+
+    .entry p + p {
+      margin-top: 0.6rem;
+    }
+
+    .brief {
+      color: var(--muted);
+    }
+
+    .brief .role {
+      color: var(--ink);
+    }
+
+    /* ---------- Fecho ---------- */
+
+    .close {
+      padding: clamp(3rem, 7vw, 4.5rem) 0 clamp(4rem, 9vw, 6rem);
+      border-top: 1px solid var(--rule);
+    }
+
+    .close h2 {
+      color: var(--display);
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+    }
+
+    .close p {
+      margin-top: 0.75rem;
+      max-width: 48ch;
+      color: var(--muted);
+    }
+
+    footer {
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    /* ---------- Telas estreitas ---------- */
+
+    @media (max-width: 54rem) {
+      :root {
+        --gap: 1.75rem;
+      }
+
+      .intro {
+        grid-template-columns: minmax(0, 1fr) 9.5rem;
+        gap: 1.75rem;
+      }
+
+      .block {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .block-label {
+        position: static;
+      }
+    }
+
+    @media (max-width: 34rem) {
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        width: 9rem;
+        order: -1;
+      }
+
+      .lead {
+        max-width: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Castelan home">
-        <span class="brand-name">castelan</span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <nav id="nav" class="nav" aria-label="Principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
+  <a class="skip" href="#registro">Pular para o conteúdo</a>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Olá, eu sou o <span class="accent">Castelan</span>.</h1>
-          <p class="subtitle">Desenvolvo produtos digitais com foco em performance, acessibilidade e uma ótima
-            experiência de uso.</p>
-          <div class="cta-group">
-            <a class="btn primary" href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
-              aria-label="Vamos conversar no WhatsApp">
-              💬 Vamos conversar no WhatsApp
-            </a>
-          </div>
-        </div>
-        <div class="hero-card" aria-hidden="true">
-          <div class="card-inner">
-            <img src="Gabriel Castelan.jpeg" alt="Imagem de Gabriel Castelan">
-          </div>
-        </div>
-      </div>
-    </section>
+  <header class="wrap intro">
+    <div>
+      <h1 class="name">Gabriel<br>Castelan</h1>
+      <p class="lead">Desenvolvedor e líder técnico. Construo os sistemas que empresas usam todo dia.</p>
+      <p class="where">Moro em Criciúma, no sul de Santa Catarina, e ajudo a montar a comunidade de tecnologia
+        daqui.</p>
 
-    <section id="sobre" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2>Sobre mim</h2>
-          <p>Sou desenvolvedor de software com experiência em front‑end e back‑end, criando soluções escaláveis, seguras
-            e fáceis de manter. Gosto de interfaces limpas, código claro e entregar valor rapidamente.</p>
-          <p>Trabalho com JavaScript/TypeScript, Node.js e arquiteturas modernas.</p>
-        </div>
-        <ul class="feature-list">
-          <li>Sistemas Web</li>
-          <li>Acessibilidade (a11y)</li>
-          <li>Design Systems</li>
-          <li>APIs REST/GraphQL</li>
-          <li>Observabilidade</li>
+      <div class="contact">
+        <a class="btn" href="https://wa.me/5548998621436?text=Ol%C3%A1%2C%20Gabriel%21" rel="me noopener">Falar no
+          WhatsApp</a>
+        <ul class="elsewhere">
+          <li><a href="mailto:gabrielmcastelan@gmail.com">E-mail</a></li>
+          <li><a href="https://www.linkedin.com/in/gabrielmcastelan/" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/gabrielcastelan" rel="me noopener">GitHub</a></li>
+          <li><a href="https://instagram.com/gabrielmcastelan" rel="me noopener">Instagram</a></li>
         </ul>
       </div>
+    </div>
+
+    <img class="portrait" src="foto.webp" srcset="foto@1x.webp 240w, foto.webp 480w"
+      sizes="(max-width: 34rem) 9rem, (max-width: 54rem) 9.5rem, 14rem" width="480" height="720" fetchpriority="high"
+      decoding="async" alt="Retrato de Gabriel Castelan.">
+  </header>
+
+  <main id="registro">
+    <section class="wrap block" aria-labelledby="agora">
+      <h2 class="block-label" id="agora">Agora</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Synapse</h3>
+            <time class="when" datetime="2025-09">desde set 2025</time>
+          </div>
+          <p><span class="role">Co-fundador.</span> Estúdio de software sob encomenda. Entregamos sistemas de gestão
+            para empresas: integração com ERP, automação de processos financeiros e fiscais, dashboards de operação.
+            Acompanho o projeto inteiro, do levantamento com o cliente até o servidor rodando em produção.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Easy Alert</h3>
+            <time class="when" datetime="2025-09">desde set 2025</time>
+          </div>
+          <p><span class="role">Desenvolvedor e líder técnico.</span> Plataforma de manutenção predial usada por
+            síndicos, construtoras e prestadores de serviço. Lidero um time de dois desenvolvedores, organizo o backlog
+            e reviso o código que vai para produção.</p>
+          <p>No produto: React, React Native e APIs em NestJS. Na infraestrutura: Docker, Nginx e deploy em Linux, com
+            Grafana e Prometheus para enxergar o que está acontecendo quando algo quebra.</p>
+        </article>
+
+      </div>
     </section>
 
-    <section id="contato" class="section">
-      <div class="container">
-        <div class="contact-cta">
-          <h2>Vamos conversar?</h2>
-          <p>Me chame no WhatsApp e conte sobre sua ideia ou projeto.</p>
-          <a class="btn primary large" href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
-            aria-label="WhatsApp CTA">
-            💬 Falar no WhatsApp
-          </a>
-        </div>
+    <section class="wrap block" aria-labelledby="comunidade">
+      <h2 class="block-label" id="comunidade">Comunidade</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Startup Weekend IA Criciúma</h3>
+            <time class="when" datetime="2026-11-06">nov 2026</time>
+          </div>
+          <p><span class="role">Líder da organização.</span> Primeira edição do vertical de inteligência artificial no
+            sul de Santa Catarina, com facilitação oficial da Techstars. São 54 horas, 120 vagas e cerca de 100
+            participantes na Betha Sistemas, de 6 a 8 de novembro de 2026.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Startup Weekend Criciúma</h3>
+            <time class="when" datetime="2026-05">mai 2026</time>
+          </div>
+          <p>A edição anterior esgotou: 121 inscritos e 95 presentes, com NPS de 9,78 na pesquisa de satisfação. Um
+            terço se ofereceu para ajudar a organizar a seguinte, e esse é o número de que mais me
+            orgulho.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Criciúma Devs</h3>
+            <time class="when">desde 2024</time>
+          </div>
+          <p>Comunidade de tecnologia da região, ativa desde 2015 e reunida em meetups a cada 45 dias. Contribuo no
+            Criciúma Devs Jobs, projeto open source em Angular e Go que conecta desenvolvedores e empresas daqui.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>South Tech Summit</h3>
+            <time class="when" datetime="2025-12">dez 2025</time>
+          </div>
+          <p class="brief">Painel <span class="role">“Construindo Comunidades Tech que Duram”</span>, sobre o que faz
+            uma comunidade sobreviver ao entusiasmo inicial.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Community Leader Academy</h3>
+            <time class="when" datetime="2024-08">ago 2024</time>
+          </div>
+          <p class="brief">Formação de lideranças do ecossistema de inovação e startups de Santa Catarina.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="wrap block" aria-labelledby="ensino">
+      <h2 class="block-label" id="ensino">Ensino</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>IA como Copiloto do Engenheiro</h3>
+            <time class="when" datetime="2026-08">ago 2026</time>
+          </div>
+          <p><span class="role">Minicurso, duas noites.</span> Turma esgotada, 27 estudantes de mecatrônica, mecânica,
+            elétrica e química. Nada de programação: cada aluno saiu com uma solução de IA aplicada ao próprio
+            trabalho.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Deploy na Prática</h3>
+            <time class="when" datetime="2025-08">ago 2025</time>
+          </div>
+          <p><span class="role">Workshop de DevOps</span> na semana acadêmica da UniSatc. Ensinei a turma a colocar uma
+            aplicação completa no ar sem gastar nada, usando Supabase, Render e Firebase Hosting.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Do Zero ao Pro Talks</h3>
+            <time class="when" datetime="2025-10-22">out 2025</time>
+          </div>
+          <p><span class="role">Organizador.</span> Painel presencial na Satc com lideranças de software da Useall, do
+            iFood, do Mercado Livre e da Darwin, sobre carreira em engenharia de software.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="wrap block" aria-labelledby="antes">
+      <h2 class="block-label" id="antes">Antes</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Innova Corporate</h3>
+            <time class="when" datetime="2024-09">2024-2025</time>
+          </div>
+          <p class="brief"><span class="role">Desenvolvedor fullstack.</span> Angular, React, NestJS, Prisma e
+            Postgres.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>La Moda</h3>
+            <time class="when" datetime="2023-11">2023-2024</time>
+          </div>
+          <p class="brief"><span class="role">Estagiário e depois assistente de TI.</span> Sistemas internos em React,
+            BI em Python e um projeto de IA com LangChain.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Ada Software House</h3>
+            <time class="when" datetime="2021-07">2021</time>
+          </div>
+          <p class="brief"><span class="role">Primeiro estágio.</span> Front-end estático em HTML e CSS.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="wrap block" aria-labelledby="formacao">
+      <h2 class="block-label" id="formacao">Formação</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>UniSatc</h3>
+            <time class="when" datetime="2023">2023-2027</time>
+          </div>
+          <p class="brief">Graduação em Design. Por isso costumo desenhar a tela antes de escrever a primeira linha de código.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>CoBusiness</h3>
+            <time class="when" datetime="2023">2023-2024</time>
+          </div>
+          <p class="brief">Certificação em Analista de Inovação.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="wrap close" aria-labelledby="contato">
+      <h2 id="contato">Me conta o que você quer construir.</h2>
+      <p>Respondo rápido no WhatsApp. Serve para projeto, parceria, convite para palestrar ou dar aula, ou só para
+        trocar ideia sobre a comunidade daqui.</p>
+      <div class="contact">
+        <a class="btn" href="https://wa.me/5548998621436?text=Ol%C3%A1%2C%20Gabriel%21" rel="me noopener">Falar no
+          WhatsApp</a>
+        <ul class="elsewhere">
+          <li><a href="mailto:gabrielmcastelan@gmail.com">gabrielmcastelan@gmail.com</a></li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Synapse. Todos os direitos reservados.</p>
-      <div class="socials">
-        <a href="mailto:contato@castelan.dev.br" aria-label="Enviar email">Email</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://wa.me/5548998621436?text=Ol%C3%A1!" target="_blank" rel="noopener"
-          aria-label="WhatsApp">WhatsApp</a>
-      </div>
-    </div>
+  <footer class="wrap">
+    <p>Gabriel Castelan. Criciúma, Santa Catarina, Brasil.</p>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://castelan.dev.br/",
+    "inLanguage": "pt-BR",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://castelan.dev.br/#gabriel",
+      "name": "Gabriel Castelan",
+      "givenName": "Gabriel",
+      "familyName": "Castelan",
+      "url": "https://castelan.dev.br/",
+      "image": "https://castelan.dev.br/foto.webp",
+      "email": "gabrielmcastelan@gmail.com",
+      "telephone": "+5548998621436",
+      "jobTitle": ["Desenvolvedor de software", "Líder técnico", "Co-fundador"],
+      "description": "Desenvolvedor e líder técnico em Criciúma, Santa Catarina. Co-fundador da Synapse, líder técnico na Easy Alert e líder da organização do Startup Weekend IA Criciúma 2026.",
+      "nationality": { "@type": "Country", "name": "Brasil" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Criciúma",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/gabrielmcastelan/",
+        "https://github.com/gabrielcastelan",
+        "https://instagram.com/gabrielmcastelan"
+      ],
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Synapse",
+          "url": "https://synapsee.com.br/",
+          "description": "Estúdio de engenharia de software sob encomenda."
+        },
+        {
+          "@type": "Organization",
+          "name": "Easy Alert",
+          "url": "https://easyalert.com.br/",
+          "description": "Plataforma de gestão de manutenção predial."
+        }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "UniSatc", "url": "https://unisatc.com.br/" },
+        { "@type": "Organization", "name": "CoBusiness" }
+      ],
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Português", "alternateName": "pt-BR" }
+      ],
+      "knowsAbout": [
+        "Desenvolvimento de software",
+        "TypeScript",
+        "React",
+        "React Native",
+        "Node.js",
+        "NestJS",
+        "PostgreSQL",
+        "Docker",
+        "DevOps",
+        "Observabilidade",
+        "Liderança técnica",
+        "Inteligência artificial aplicada",
+        "Comunidades de tecnologia",
+        "Startup Weekend"
+      ],
+      "performerIn": {
+        "@type": "Event",
+        "name": "Startup Weekend IA Criciúma 2026",
+        "startDate": "2026-11-06",
+        "endDate": "2026-11-08",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "url": "https://swcriciuma.com.br/",
+        "location": {
+          "@type": "Place",
+          "name": "Betha Sistemas",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Júlio Gaidzinski, 320",
+            "addressLocality": "Criciúma",
+            "addressRegion": "SC",
+            "addressCountry": "BR"
+          }
+        }
+      }
+    }
+  }
+  </script>
 </body>
 
 </html>
