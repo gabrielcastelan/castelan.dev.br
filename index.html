@@ -9,7 +9,7 @@
   <meta name="description"
     content="Desenvolvedor e líder técnico em Criciúma, SC. Co-fundador da Synapse, líder técnico na Easy Alert e líder do Startup Weekend IA Criciúma 2026.">
   <link rel="canonical" href="https://castelan.dev.br/">
-  <meta name="author" content="Gabriel Castelan">
+  <meta name="author" content="Gabriel Marques Castelan">
 
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -27,8 +27,8 @@
   <meta property="og:description"
     content="Co-fundador da Synapse, líder técnico na Easy Alert e líder da organização do Startup Weekend IA Criciúma 2026.">
   <meta property="og:image" content="https://castelan.dev.br/foto.webp">
-  <meta property="og:image:width" content="480">
-  <meta property="og:image:height" content="720">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
   <meta property="og:image:alt" content="Retrato de Gabriel Castelan.">
   <meta property="profile:first_name" content="Gabriel">
   <meta property="profile:last_name" content="Castelan">
@@ -45,9 +45,10 @@
       --accent: #0b5bd3;
       --accent-ink: #fff;
       --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --col: min(68rem, 100% - 3rem);
-      --label: 10.5rem;
-      --gap: 3rem;
+      --col: min(48rem, 100% - 3rem);
+      --label: 8.5rem;
+      --gap: 2.5rem;
+      --portrait: 11rem;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -101,7 +102,6 @@
 
     p {
       margin: 0;
-      text-wrap: pretty;
     }
 
     img {
@@ -147,42 +147,49 @@
       text-decoration: none;
     }
 
+    /* Texto corrido fecha na mesma borda direita da regua e das datas. */
+    .justify {
+      text-align: justify;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+
     /* ---------- Abertura ---------- */
 
     .intro {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 14rem;
+      grid-template-columns: minmax(0, 1fr) var(--portrait);
       gap: var(--gap);
       align-items: start;
-      padding: clamp(3.5rem, 11vw, 7rem) 0 clamp(3rem, 8vw, 5rem);
+      padding: clamp(3.5rem, 11vw, 6rem) 0 clamp(2.5rem, 7vw, 4rem);
     }
 
     .name {
       color: var(--display);
-      font-size: clamp(2.75rem, 9vw, 5rem);
+      font-size: clamp(2.75rem, 8vw, 4.25rem);
       font-weight: 700;
       letter-spacing: -0.035em;
       line-height: 0.97;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
 
     .lead {
-      max-width: 34ch;
-      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      font-size: clamp(1.1rem, 2.2vw, 1.25rem);
       line-height: 1.45;
       color: var(--ink);
+      text-wrap: pretty;
     }
 
     .where {
       margin-top: 0.9rem;
-      max-width: 42ch;
       color: var(--muted);
     }
 
     .portrait {
-      border-radius: 4px;
+      width: var(--portrait);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
       background: var(--surface);
-      aspect-ratio: 2 / 3;
       object-fit: cover;
     }
 
@@ -193,7 +200,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 0.85rem 1.4rem;
-      margin-top: 2rem;
+      margin-top: 1.9rem;
     }
 
     .btn {
@@ -225,7 +232,7 @@
       display: grid;
       grid-template-columns: var(--label) minmax(0, 1fr);
       gap: var(--gap);
-      padding: clamp(2.25rem, 5vw, 3.25rem) 0;
+      padding: clamp(2.25rem, 5vw, 3rem) 0;
       border-top: 1px solid var(--rule);
     }
 
@@ -239,8 +246,7 @@
 
     .entries {
       display: grid;
-      gap: 2.25rem;
-      max-width: 44rem;
+      gap: 2.1rem;
     }
 
     .entry-top {
@@ -258,6 +264,18 @@
       letter-spacing: -0.012em;
     }
 
+    .entry-top h3 a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--muted);
+      text-underline-offset: 0.22em;
+    }
+
+    .entry-top h3 a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
     .when {
       color: var(--muted);
       font-size: 0.9375rem;
@@ -268,10 +286,6 @@
     .role {
       font-weight: 600;
       color: var(--display);
-    }
-
-    .entry p {
-      max-width: 64ch;
     }
 
     .entry p + p {
@@ -289,7 +303,7 @@
     /* ---------- Fecho ---------- */
 
     .close {
-      padding: clamp(3rem, 7vw, 4.5rem) 0 clamp(4rem, 9vw, 6rem);
+      padding: clamp(2.75rem, 6vw, 4rem) 0 clamp(3.5rem, 8vw, 5rem);
       border-top: 1px solid var(--rule);
     }
 
@@ -297,12 +311,10 @@
       color: var(--display);
       font-size: clamp(1.6rem, 4vw, 2.1rem);
       letter-spacing: -0.02em;
-      max-width: 22ch;
     }
 
     .close p {
       margin-top: 0.75rem;
-      max-width: 48ch;
       color: var(--muted);
     }
 
@@ -317,11 +329,7 @@
     @media (max-width: 54rem) {
       :root {
         --gap: 1.75rem;
-      }
-
-      .intro {
-        grid-template-columns: minmax(0, 1fr) 9.5rem;
-        gap: 1.75rem;
+        --portrait: 8rem;
       }
 
       .block {
@@ -335,17 +343,16 @@
     }
 
     @media (max-width: 34rem) {
+      :root {
+        --portrait: 7.5rem;
+      }
+
       .intro {
         grid-template-columns: 1fr;
       }
 
       .portrait {
-        width: 9rem;
         order: -1;
-      }
-
-      .lead {
-        max-width: none;
       }
     }
   </style>
@@ -357,8 +364,8 @@
   <header class="wrap intro">
     <div>
       <h1 class="name">Gabriel<br>Castelan</h1>
-      <p class="lead">Desenvolvedor e líder técnico. Construo os sistemas que empresas usam todo dia.</p>
-      <p class="where">Moro em Criciúma, no sul de Santa Catarina, e ajudo a montar a comunidade de tecnologia
+      <p class="lead justify">Desenvolvedor e líder técnico. Construo os sistemas que empresas usam todo dia.</p>
+      <p class="where justify">Moro em Criciúma, no sul de Santa Catarina, e ajudo a montar a comunidade de tecnologia
         daqui.</p>
 
       <div class="contact">
@@ -373,8 +380,8 @@
       </div>
     </div>
 
-    <img class="portrait" src="foto.webp" srcset="foto@1x.webp 240w, foto.webp 480w"
-      sizes="(max-width: 34rem) 9rem, (max-width: 54rem) 9.5rem, 14rem" width="480" height="720" fetchpriority="high"
+    <img class="portrait" src="foto.webp" srcset="foto@1x.webp 200w, foto.webp 400w"
+      sizes="(max-width: 34rem) 7.5rem, (max-width: 54rem) 8rem, 11rem" width="400" height="400" fetchpriority="high"
       decoding="async" alt="Retrato de Gabriel Castelan.">
   </header>
 
@@ -385,24 +392,25 @@
 
         <article class="entry">
           <div class="entry-top">
-            <h3>Synapse</h3>
+            <h3><a href="https://synapsee.com.br" rel="noopener">Synapse</a></h3>
             <time class="when" datetime="2025-09">desde set 2025</time>
           </div>
-          <p><span class="role">Co-fundador.</span> Estúdio de software sob encomenda. Entregamos sistemas de gestão
-            para empresas: integração com ERP, automação de processos financeiros e fiscais, dashboards de operação.
-            Acompanho o projeto inteiro, do levantamento com o cliente até o servidor rodando em produção.</p>
+          <p class="justify"><span class="role">Co-fundador.</span> Estúdio de software sob encomenda. Entregamos
+            sistemas de gestão para empresas: integração com ERP, automação de processos financeiros e fiscais,
+            dashboards de operação. Acompanho o projeto inteiro, do levantamento com o cliente até o servidor rodando em
+            produção.</p>
         </article>
 
         <article class="entry">
           <div class="entry-top">
-            <h3>Easy Alert</h3>
+            <h3><a href="https://easyalert.com.br" rel="noopener">Easy Alert</a></h3>
             <time class="when" datetime="2025-09">desde set 2025</time>
           </div>
-          <p><span class="role">Desenvolvedor e líder técnico.</span> Plataforma de manutenção predial usada por
-            síndicos, construtoras e prestadores de serviço. Lidero um time de dois desenvolvedores, organizo o backlog
-            e reviso o código que vai para produção.</p>
-          <p>No produto: React, React Native e APIs em NestJS. Na infraestrutura: Docker, Nginx e deploy em Linux, com
-            Grafana e Prometheus para enxergar o que está acontecendo quando algo quebra.</p>
+          <p class="justify"><span class="role">Desenvolvedor e líder técnico.</span> Plataforma de manutenção predial
+            usada por síndicos, construtoras e prestadores de serviço. Lidero um time de dois desenvolvedores, organizo
+            o backlog e reviso o código que vai para produção.</p>
+          <p class="justify">No produto: React, React Native e APIs em NestJS. Na infraestrutura: Docker, Nginx e
+            deploy em Linux, com Grafana e Prometheus para enxergar o que está acontecendo quando algo quebra.</p>
         </article>
 
       </div>
@@ -414,40 +422,41 @@
 
         <article class="entry">
           <div class="entry-top">
-            <h3>Startup Weekend IA Criciúma</h3>
+            <h3><a href="https://supertixs.com/e/swcriciuma-ia" rel="noopener">Startup Weekend IA Criciúma</a></h3>
             <time class="when" datetime="2026-11-06">nov 2026</time>
           </div>
-          <p><span class="role">Líder da organização.</span> Primeira edição do vertical de inteligência artificial no
-            sul de Santa Catarina, com facilitação oficial da Techstars. São 54 horas, 120 vagas e cerca de 100
-            participantes na Betha Sistemas, de 6 a 8 de novembro de 2026.</p>
+          <p class="justify"><span class="role">Líder da organização.</span> Primeira edição do vertical de
+            inteligência artificial no sul de Santa Catarina, com facilitação oficial da Techstars. São 54 horas, 120
+            vagas e cerca de 100 participantes na Betha Sistemas, de 6 a 8 de novembro de 2026.</p>
         </article>
 
         <article class="entry">
           <div class="entry-top">
-            <h3>Startup Weekend Criciúma</h3>
+            <h3><a href="https://instagram.com/swcriciuma" rel="noopener">Startup Weekend Criciúma</a></h3>
             <time class="when" datetime="2026-05">mai 2026</time>
           </div>
-          <p>A edição anterior esgotou: 121 inscritos e 95 presentes, com NPS de 9,78 na pesquisa de satisfação. Um
-            terço se ofereceu para ajudar a organizar a seguinte, e esse é o número de que mais me
+          <p class="justify">A edição anterior esgotou: 121 inscritos e 95 presentes, com NPS de 9,78 na pesquisa de
+            satisfação. Um terço se ofereceu para ajudar a organizar a seguinte, e esse é o número de que mais me
             orgulho.</p>
         </article>
 
         <article class="entry">
           <div class="entry-top">
-            <h3>Criciúma Devs</h3>
+            <h3><a href="https://chat.whatsapp.com/BfQopKN9ieVAz20FFwP1mb" rel="noopener">Criciúma Devs</a></h3>
             <time class="when">desde 2024</time>
           </div>
-          <p>Comunidade de tecnologia da região, ativa desde 2015 e reunida em meetups a cada 45 dias. Contribuo no
-            Criciúma Devs Jobs, projeto open source em Angular e Go que conecta desenvolvedores e empresas daqui.</p>
+          <p class="justify">Comunidade de tecnologia da região, ativa desde 2015 e reunida em meetups a cada 45 dias.
+            Contribuo no Criciúma Devs Jobs, projeto open source em Angular e Go que conecta desenvolvedores e empresas
+            daqui.</p>
         </article>
 
         <article class="entry">
           <div class="entry-top">
-            <h3>South Tech Summit</h3>
+            <h3><a href="https://southtechsummit.com.br/" rel="noopener">South Tech Summit</a></h3>
             <time class="when" datetime="2025-12">dez 2025</time>
           </div>
-          <p class="brief">Painel <span class="role">“Construindo Comunidades Tech que Duram”</span>, sobre o que faz
-            uma comunidade sobreviver ao entusiasmo inicial.</p>
+          <p class="brief justify">Painel <span class="role">“Construindo Comunidades Tech que Duram”</span>, sobre o
+            que faz uma comunidade sobreviver ao entusiasmo inicial.</p>
         </article>
 
         <article class="entry">
@@ -455,7 +464,7 @@
             <h3>Community Leader Academy</h3>
             <time class="when" datetime="2024-08">ago 2024</time>
           </div>
-          <p class="brief">Formação de lideranças do ecossistema de inovação e startups de Santa Catarina.</p>
+          <p class="brief justify">Formação de lideranças do ecossistema de inovação e startups de Santa Catarina.</p>
         </article>
 
       </div>
@@ -470,9 +479,9 @@
             <h3>IA como Copiloto do Engenheiro</h3>
             <time class="when" datetime="2026-08">ago 2026</time>
           </div>
-          <p><span class="role">Minicurso, duas noites.</span> Turma esgotada, 27 estudantes de mecatrônica, mecânica,
-            elétrica e química. Nada de programação: cada aluno saiu com uma solução de IA aplicada ao próprio
-            trabalho.</p>
+          <p class="justify"><span class="role">Minicurso, duas noites.</span> Turma esgotada, 27 estudantes de
+            mecatrônica, mecânica, elétrica e química. Nada de programação: cada aluno saiu com uma solução de IA
+            aplicada ao próprio trabalho.</p>
         </article>
 
         <article class="entry">
@@ -480,8 +489,9 @@
             <h3>Deploy na Prática</h3>
             <time class="when" datetime="2025-08">ago 2025</time>
           </div>
-          <p><span class="role">Workshop de DevOps</span> na semana acadêmica da UniSatc. Ensinei a turma a colocar uma
-            aplicação completa no ar sem gastar nada, usando Supabase, Render e Firebase Hosting.</p>
+          <p class="justify"><span class="role">Workshop de DevOps</span> na semana acadêmica da UniSatc. Ensinei a
+            turma a colocar uma aplicação completa no ar sem gastar nada, usando Supabase, Render e Firebase Hosting.
+          </p>
         </article>
 
         <article class="entry">
@@ -489,8 +499,32 @@
             <h3>Do Zero ao Pro Talks</h3>
             <time class="when" datetime="2025-10-22">out 2025</time>
           </div>
-          <p><span class="role">Organizador.</span> Painel presencial na Satc com lideranças de software da Useall, do
-            iFood, do Mercado Livre e da Darwin, sobre carreira em engenharia de software.</p>
+          <p class="justify"><span class="role">Organizador.</span> Painel presencial na Satc com lideranças de
+            software da Useall, do iFood, do Mercado Livre e da Darwin, sobre carreira em engenharia de software.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="wrap block" aria-labelledby="cultura">
+      <h2 class="block-label" id="cultura">Cultura</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Banda marcial</h3>
+            <time class="when" datetime="2018">desde 2018</time>
+          </div>
+          <p class="justify"><span class="role">Flugelhorn.</span> Toco na Banda Marcial da Satc e também nas bandas do
+            CEDUP, do Colégio São Bento e no Grupo Atrás da Banda. Sou vice-presidente da Associação Musical Atrás da
+            Banda.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <h3>Curitiba Ska Jazz</h3>
+          </div>
+          <p class="brief justify">Desenhei o logo da banda.</p>
         </article>
 
       </div>
@@ -505,7 +539,7 @@
             <h3>Innova Corporate</h3>
             <time class="when" datetime="2024-09">2024-2025</time>
           </div>
-          <p class="brief"><span class="role">Desenvolvedor fullstack.</span> Angular, React, NestJS, Prisma e
+          <p class="brief justify"><span class="role">Desenvolvedor fullstack.</span> Angular, React, NestJS, Prisma e
             Postgres.</p>
         </article>
 
@@ -514,8 +548,8 @@
             <h3>La Moda</h3>
             <time class="when" datetime="2023-11">2023-2024</time>
           </div>
-          <p class="brief"><span class="role">Estagiário e depois assistente de TI.</span> Sistemas internos em React,
-            BI em Python e um projeto de IA com LangChain.</p>
+          <p class="brief justify"><span class="role">Estagiário e depois assistente de TI.</span> Sistemas internos em
+            React, BI em Python e um projeto de IA com LangChain.</p>
         </article>
 
         <article class="entry">
@@ -523,7 +557,7 @@
             <h3>Ada Software House</h3>
             <time class="when" datetime="2021-07">2021</time>
           </div>
-          <p class="brief"><span class="role">Primeiro estágio.</span> Front-end estático em HTML e CSS.</p>
+          <p class="brief justify"><span class="role">Primeiro estágio.</span> Front-end estático em HTML e CSS.</p>
         </article>
 
       </div>
@@ -538,7 +572,8 @@
             <h3>UniSatc</h3>
             <time class="when" datetime="2023">2023-2027</time>
           </div>
-          <p class="brief">Graduação em Design. Por isso costumo desenhar a tela antes de escrever a primeira linha de código.</p>
+          <p class="brief justify">Graduação em Design. Por isso costumo desenhar a tela antes de escrever a primeira
+            linha de código.</p>
         </article>
 
         <article class="entry">
@@ -546,16 +581,16 @@
             <h3>CoBusiness</h3>
             <time class="when" datetime="2023">2023-2024</time>
           </div>
-          <p class="brief">Certificação em Analista de Inovação.</p>
+          <p class="brief justify">Certificação em Analista de Inovação.</p>
         </article>
 
       </div>
     </section>
 
     <section class="wrap close" aria-labelledby="contato">
-      <h2 id="contato">Me conta o que você quer construir.</h2>
-      <p>Respondo rápido no WhatsApp. Serve para projeto, parceria, convite para palestrar ou dar aula, ou só para
-        trocar ideia sobre a comunidade daqui.</p>
+      <h2 id="contato">Vamos conversar?</h2>
+      <p class="justify">Projetos, parcerias, convites, dúvidas, pode mandar direto pra mim que já trocamos uma ideia
+        rapidamente.</p>
       <div class="contact">
         <a class="btn" href="https://wa.me/5548998621436?text=Ol%C3%A1%2C%20Gabriel%21" rel="me noopener">Falar no
           WhatsApp</a>
@@ -567,7 +602,7 @@
   </main>
 
   <footer class="wrap">
-    <p>Gabriel Castelan. Criciúma, Santa Catarina, Brasil.</p>
+    <p>Gabriel Marques Castelan. Criciúma, Santa Catarina, Brasil.</p>
   </footer>
 
   <script type="application/ld+json">
@@ -580,7 +615,9 @@
       "@type": "Person",
       "@id": "https://castelan.dev.br/#gabriel",
       "name": "Gabriel Castelan",
+      "alternateName": "Gabriel Marques Castelan",
       "givenName": "Gabriel",
+      "additionalName": "Marques",
       "familyName": "Castelan",
       "url": "https://castelan.dev.br/",
       "image": "https://castelan.dev.br/foto.webp",
@@ -604,16 +641,21 @@
         {
           "@type": "Organization",
           "name": "Synapse",
-          "url": "https://synapsee.com.br/",
+          "url": "https://synapsee.com.br",
           "description": "Estúdio de engenharia de software sob encomenda."
         },
         {
           "@type": "Organization",
           "name": "Easy Alert",
-          "url": "https://easyalert.com.br/",
+          "url": "https://easyalert.com.br",
           "description": "Plataforma de gestão de manutenção predial."
         }
       ],
+      "memberOf": {
+        "@type": "MusicGroup",
+        "name": "Associação Musical Atrás da Banda",
+        "description": "Gabriel toca flugelhorn e é vice-presidente da associação."
+      },
       "alumniOf": [
         { "@type": "CollegeOrUniversity", "name": "UniSatc", "url": "https://unisatc.com.br/" },
         { "@type": "Organization", "name": "CoBusiness" }
@@ -635,7 +677,9 @@
         "Liderança técnica",
         "Inteligência artificial aplicada",
         "Comunidades de tecnologia",
-        "Startup Weekend"
+        "Startup Weekend",
+        "Banda marcial",
+        "Flugelhorn"
       ],
       "performerIn": {
         "@type": "Event",
@@ -645,6 +689,11 @@
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "url": "https://swcriciuma.com.br/",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://supertixs.com/e/swcriciuma-ia",
+          "availability": "https://schema.org/InStock"
+        },
         "location": {
           "@type": "Place",
           "name": "Betha Sistemas",

@@ -10,7 +10,7 @@ Idioma: português do Brasil (pt-BR)
 
 ## Identificação
 
-- Nome completo: Gabriel Castelan
+- Nome completo: Gabriel Marques Castelan
 - Localização: Criciúma, Santa Catarina, Brasil
 - Atuação: desenvolvimento de software, liderança técnica, comunidades de tecnologia e ensino
 - E-mail: gabrielmcastelan@gmail.com
@@ -89,6 +89,18 @@ Hosting.
 Organizador do evento presencial na Satc, em 22 de outubro de 2025, com painel de
 lideranças de software da Useall, iFood, Mercado Livre e Darwin sobre carreira em
 engenharia de software.
+
+## Cultura
+
+### Banda marcial, desde 2018
+
+Gabriel toca flugelhorn na Banda Marcial da Satc e também nas bandas do CEDUP,
+do Colégio São Bento e no Grupo Atrás da Banda. É vice-presidente da Associação
+Musical Atrás da Banda.
+
+### Curitiba Ska Jazz
+
+Projeto de design do logo da banda.
 
 ## Experiência anterior
 
