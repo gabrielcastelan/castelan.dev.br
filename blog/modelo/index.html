@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!--
+  MODELO DE MATERIA. Copie esta pasta inteira pra criar uma materia nova:
+
+      cp -r blog/modelo blog/meu-slug
+
+  A pasta e o endereco: blog/meu-slug/ vira castelan.dev.br/blog/meu-slug/.
+  As imagens da materia moram na mesma pasta do index.html dela.
+
+  Checklist do que trocar aqui dentro:
+    1. <title>, meta description, canonical, og:url, og:title, og:description
+       e og:image.
+    2. Apague a linha <meta name="robots" content="noindex"> (ela existe so
+       pra este modelo nao aparecer na busca).
+    3. Titulo, subtitulo, data em dois lugares (o datetime legivel por maquina
+       e o texto visivel), tempo de leitura e tags.
+    4. O conteudo.
+    5. O JSON-LD no fim do arquivo: headline, alternativeHeadline, datePublished,
+       dateModified, keywords, url e image.
+    6. Adicione a materia em blog/index.html (bloco do ano certo) e em
+       sitemap.xml. Se o assunto mudar algum fato do perfil, atualize tambem o
+       llms.txt e o JSON-LD da home, pra as tres superficies nao se
+       contradizerem.
+
+  Tempo de leitura: conte as palavras e divida por 200.
+      tr -s '[:space:]' '\n' < index.html | wc -w
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Modelo de matéria, blog de Gabriel Castelan</title>
+  <meta name="description"
+    content="Como e a cara de uma materia deste blog: titulo, subtitulo, autor, tags, imagem, citacao, lista e codigo.">
+  <link rel="canonical" href="https://castelan.dev.br/blog/modelo/">
+  <meta name="author" content="Gabriel Marques Castelan">
+  <meta name="robots" content="noindex">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Gabriel Castelan">
+  <meta property="og:url" content="https://castelan.dev.br/blog/modelo/">
+  <meta property="og:title" content="Modelo de matéria">
+  <meta property="og:description"
+    content="Como e a cara de uma materia deste blog: titulo, subtitulo, autor, tags, imagem, citacao, lista e codigo.">
+  <meta property="og:image" content="https://castelan.dev.br/blog/modelo/exemplo-largo.svg">
+  <meta property="article:published_time" content="2026-10-26">
+  <meta property="article:author" content="Gabriel Marques Castelan">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="../blog.css">
+</head>
+
+<body>
+  <a class="skip" href="#materia">Pular para o conteúdo</a>
+
+  <nav class="wrap topbar" aria-label="Trilha de navegação">
+    <a href="/">Gabriel Castelan</a>
+    <span aria-hidden="true">/</span>
+    <a href="/blog/">Blog</a>
+  </nav>
+
+  <article class="wrap">
+
+    <header class="post-head">
+      <h1 class="post-title">Modelo de matéria</h1>
+      <p class="post-sub">Todos os elementos que uma matéria deste blog pode usar, numa página só, pra conferir no
+        navegador antes de escrever a primeira de verdade.</p>
+
+      <div class="byline">
+        <img src="/foto@1x.webp" width="200" height="200" decoding="async" alt="">
+        <div>
+          <p class="byline-who"><a href="/" rel="author">Gabriel Castelan</a></p>
+          <p class="byline-when"><time datetime="2026-10-26">26 de outubro de 2026</time> · 3 min de leitura</p>
+        </div>
+      </div>
+
+      <ul class="tags">
+        <li>Layout</li>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </header>
+
+    <div class="post-body" id="materia">
+
+      <p class="justify">O texto da matéria corre na mesma coluna em que correm as entradas da home, com a mesma medida
+        de cerca de 72 caracteres por linha e fechando na mesma borda direita. A coluna estreita da esquerda continua
+        ali, vazia, reservada para as notas de margem e para as imagens que sangram.</p>
+
+      <p class="justify">Todo parágrafo precisa da classe <code>justify</code>. Sem ela o texto fica alinhado à esquerda
+        e quebra o esquadro que sustenta o resto do site. A hifenização automática depende do <code>lang="pt-BR"</code>
+        na tag <code>&lt;html&gt;</code>, que já está no lugar.</p>
+
+      <figure class="wide">
+        <img src="exemplo-largo.svg" width="1600" height="900" loading="lazy" decoding="async"
+          alt="Descreva aqui o que a imagem mostra, em uma frase.">
+        <figcaption>Imagem com a classe <code>wide</code>: ocupa as duas colunas, sangra para a esquerda e termina na
+          borda direita de sempre. <span class="credit">Foto: quem tirou.</span></figcaption>
+      </figure>
+
+      <h2>Como escrever uma matéria nova</h2>
+
+      <p class="justify">Copie a pasta <code>blog/modelo</code> com um nome novo, ajuste o cabeçalho e escreva. O nome
+        da pasta é o endereço da matéria, então ele é definitivo: escolha curto, em minúsculas, com hífen entre as
+        palavras e sem acento.</p>
+
+      <ol class="justify">
+        <li>Troque título, subtítulo, data, tempo de leitura e tags.</li>
+        <li>Escreva o conteúdo e coloque as imagens na mesma pasta.</li>
+        <li>Atualize o <code>&lt;title&gt;</code>, a meta description, o canonical, as tags Open Graph e o JSON-LD do
+          fim do arquivo.</li>
+        <li>Adicione a entrada em <code>blog/index.html</code> e a URL em <code>sitemap.xml</code>.</li>
+      </ol>
+
+      <aside class="note">Nota de margem: comentário curto que não cabe no texto corrido. No celular ela desce e ganha
+        uma barra na lateral.</aside>
+
+      <p class="justify">A nota de margem fica na altura do parágrafo que vem depois dela no HTML, encostada no vão
+        entre as colunas. Serve para a observação lateral, o aviso de versão, a referência solta. Se o texto é
+        importante, ele vai no corpo.</p>
+
+      <figure>
+        <img src="exemplo-coluna.svg" width="1200" height="800" loading="lazy" decoding="async"
+          alt="Descreva aqui o que a imagem mostra, em uma frase.">
+        <figcaption>Imagem sem a classe <code>wide</code>: acompanha a largura do texto. Boa para captura de tela, em
+          que o detalhe importa mais que o tamanho.</figcaption>
+      </figure>
+
+      <p class="justify">Toda imagem precisa de <code>width</code>, <code>height</code>, <code>alt</code> e
+        <code>loading="lazy"</code>. As medidas evitam que a página pule enquanto carrega, o <code>alt</code> descreve a
+        imagem para quem usa leitor de tela e o carregamento preguiçoso deixa a primeira tela abrir antes do resto.
+        Salve em WebP: os dois arquivos de exemplo aqui são SVG só porque são placeholders.</p>
+
+      <blockquote>
+        <p>A citação ganha uma barra discreta na esquerda e um corpo maior. Ela existe para a frase de outra pessoa, não
+          para dar destaque a uma frase minha.</p>
+        <cite>Quem disse, onde disse</cite>
+      </blockquote>
+
+      <h2>Código</h2>
+
+      <p class="justify">Código aparece em duas formas. No meio da frase, <code>assim</code>, para um nome de arquivo ou
+        de comando. Em bloco, para o que precisa ser lido linha por linha:</p>
+
+      <pre><code>python3 -m http.server 8000
+# http://localhost:8000/blog/</code></pre>
+
+      <p class="justify">O bloco rola sozinho na horizontal quando a linha é longa, então a página nunca rola de lado.
+        A fonte monoespaçada é a do sistema de quem visita, igual ao resto: nada é baixado.</p>
+
+      <h3>Subtítulo de terceiro nível</h3>
+
+      <p class="justify">Existe, mas use pouco. Uma matéria com três níveis de hierarquia normalmente é duas matérias.
+      </p>
+
+      <ul class="justify">
+        <li>Lista com marcador, para enumerar sem dar ordem.</li>
+        <li>Link no meio do texto fica <a href="/">azul, como este</a>, porque azul aqui só aparece em coisa clicável.
+        </li>
+        <li>Links para fora levam <code>rel="noopener"</code>.</li>
+      </ul>
+
+    </div>
+
+    <footer class="post-foot">
+      <div class="byline">
+        <img src="/foto@1x.webp" width="200" height="200" loading="lazy" decoding="async" alt="">
+        <div>
+          <p class="byline-who"><a href="/">Gabriel Castelan</a></p>
+          <p class="byline-when">Criciúma, Santa Catarina</p>
+        </div>
+      </div>
+      <p class="about justify">Desenvolvedor e líder técnico. Co-fundador da Synapse, líder técnico na Easy Alert e
+        líder da organização do Startup Weekend IA Criciúma 2026.</p>
+
+      <!-- Links de vizinhanca, preenchidos a mao. Apague o que nao existir. -->
+      <nav class="post-nav" aria-label="Outras matérias">
+        <a href="/blog/">Todas as matérias</a>
+        <a href="/blog/modelo/">Próxima matéria</a>
+      </nav>
+    </footer>
+
+  </article>
+
+  <footer class="wrap">
+    <p>Gabriel Marques Castelan. Criciúma, Santa Catarina, Brasil.</p>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://castelan.dev.br/blog/modelo/#materia",
+    "url": "https://castelan.dev.br/blog/modelo/",
+    "mainEntityOfPage": "https://castelan.dev.br/blog/modelo/",
+    "headline": "Modelo de matéria",
+    "alternativeHeadline": "Todos os elementos que uma matéria deste blog pode usar, numa página só.",
+    "description": "Como é a cara de uma matéria deste blog: título, subtítulo, autor, tags, imagem, citação, lista e código.",
+    "inLanguage": "pt-BR",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "keywords": ["Layout", "HTML", "CSS"],
+    "image": "https://castelan.dev.br/blog/modelo/exemplo-largo.svg",
+    "wordCount": 511,
+    "isPartOf": { "@id": "https://castelan.dev.br/blog/#blog" },
+    "author": {
+      "@type": "Person",
+      "@id": "https://castelan.dev.br/#gabriel",
+      "name": "Gabriel Castelan",
+      "url": "https://castelan.dev.br/"
+    },
+    "publisher": { "@id": "https://castelan.dev.br/#gabriel" }
+  }
+  </script>
+</body>
+
+</html>

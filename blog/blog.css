@@ -1,0 +1,599 @@
+/* ===========================================================================
+   Estilos do blog de castelan.dev.br
+
+   Por que este CSS e um arquivo externo e nao inline como no index.html:
+   o blog tem N paginas. Com o CSS inline, cada materia antiga congelaria o
+   visual da epoca em que foi escrita e qualquer ajuste exigiria editar todos
+   os arquivos. Um arquivo compartilhado custa uma requisicao (cacheada a
+   partir da segunda pagina) e mantem o blog inteiro igual pra sempre.
+
+   Continua valendo: zero JavaScript, zero webfont, tema pelo sistema.
+   =========================================================================== */
+
+/* ---------- Tokens ----------
+   Identicos aos do index.html. Ao mudar uma cor, mude nos dois arquivos e nos
+   dois blocos (claro e escuro). Nunca crave um hex nas regras abaixo. */
+
+:root {
+  --paper: #fff;
+  --surface: #f5f5f7;
+  --display: #000;
+  --ink: #1a1a1e;
+  --muted: #6e6e73;
+  --rule: #e3e3e6;
+  --accent: #0b5bd3;
+  --accent-ink: #fff;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --col: min(48rem, 100% - 3rem);
+  --label: 8.5rem;
+  --gap: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #000;
+    --surface: #1c1c1e;
+    --display: #fff;
+    --ink: #f0f0f2;
+    --muted: #8e8e93;
+    --rule: #2a2a2d;
+    --accent: #549bff;
+    --accent-ink: #00122e;
+  }
+}
+
+/* ---------- Base ----------
+   Mesmo reset do index.html. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: var(--col);
+  margin-inline: auto;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 2;
+  padding: 0.6rem 0.9rem;
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Texto corrido fecha na mesma borda direita da regua e das datas. */
+.justify {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ---------- Trilha de navegacao ----------
+   Link na cor da tinta com sublinhado discreto, azul so no hover: o mesmo
+   tratamento dos titulos de entrada da home. */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.6rem;
+  padding-top: 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.topbar a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.22em;
+}
+
+.topbar a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.topbar span[aria-hidden] {
+  color: var(--rule);
+}
+
+/* ---------- Cabecalho de pagina (indice do blog) ---------- */
+
+.page-head {
+  padding: clamp(2.5rem, 8vw, 4.25rem) 0 clamp(2rem, 5vw, 2.75rem);
+}
+
+.page-title {
+  color: var(--display);
+  font-size: clamp(2.5rem, 7.5vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.page-lead {
+  margin-top: 1.15rem;
+  font-size: clamp(1.0625rem, 2.1vw, 1.1875rem);
+  line-height: 1.5;
+}
+
+/* ---------- Lista de materias ----------
+   Reusa o grid da home: rotulo a esquerda, entradas a direita, tudo fechando
+   na mesma borda direita. O rotulo aqui e o ano. */
+
+.block {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, 1fr);
+  gap: var(--gap);
+  padding: clamp(2.25rem, 5vw, 3rem) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.block-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  position: sticky;
+  top: 2rem;
+}
+
+.entries {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.entry-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.entry-top h3 {
+  color: var(--display);
+  font-size: 1.1875rem;
+  letter-spacing: -0.012em;
+}
+
+.entry-top h3 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.22em;
+}
+
+.entry-top h3 a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.when {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.brief {
+  color: var(--muted);
+}
+
+/* ---------- Tags ----------
+   Nao sao links, por isso nao sao azuis. Se um dia existir pagina por tag,
+   troque o <li> por <a> e o estilo de hover entra junto. */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.45rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.05rem 0.55rem 0.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ---------- Cabecalho da materia ---------- */
+
+.post-head {
+  padding: clamp(2.25rem, 7vw, 3.75rem) 0 clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.post-title {
+  color: var(--display);
+  font-size: clamp(2.125rem, 5.6vw, 3.125rem);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.post-sub {
+  margin-top: 1.05rem;
+  color: var(--muted);
+  font-size: clamp(1.125rem, 2.4vw, 1.3125rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.75rem;
+}
+
+.byline img {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--surface);
+  object-fit: cover;
+}
+
+.byline-who {
+  color: var(--display);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.byline-who a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.22em;
+}
+
+.byline-who a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.byline-when {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Corpo da materia ----------
+   Mesmo grid de duas colunas da home. O texto corre na coluna da direita e
+   mantem a medida confortavel de cerca de 72 caracteres; a coluna da esquerda
+   fica livre pra nota de margem. Imagem com a classe .wide ocupa as duas
+   colunas: sangra pra esquerda e continua fechando na direita. */
+
+.post-body {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, 1fr);
+  gap: 0 var(--gap);
+  padding: clamp(1.75rem, 4.5vw, 2.5rem) 0 clamp(2.5rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--rule);
+}
+
+.post-body > * {
+  grid-column: 2;
+  margin: 1.15rem 0 0;
+}
+
+.post-body > :first-child {
+  margin-top: 0;
+}
+
+.post-body > h2 {
+  margin-top: 2.75rem;
+  color: var(--display);
+  font-size: clamp(1.4375rem, 3.2vw, 1.75rem);
+  letter-spacing: -0.02em;
+}
+
+.post-body > h3 {
+  margin-top: 2rem;
+  color: var(--display);
+  font-size: 1.1875rem;
+  letter-spacing: -0.012em;
+}
+
+.post-body > h2 + p,
+.post-body > h3 + p {
+  margin-top: 0.7rem;
+}
+
+.post-body > ul,
+.post-body > ol {
+  padding-left: 1.35rem;
+}
+
+.post-body li + li {
+  margin-top: 0.4rem;
+}
+
+/* ---------- Imagens ---------- */
+
+.post-body > figure {
+  margin-top: 2.25rem;
+}
+
+.post-body > .wide {
+  grid-column: 1 / -1;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+figcaption .credit {
+  color: var(--rule);
+}
+
+/* ---------- Video ----------
+   Mesmo tratamento das imagens. O par poster + preload="none" e o que mantem
+   a promessa de velocidade do site: nenhum byte de video baixa antes de
+   alguem clicar no play, entao uma materia com cinco clipes abre no mesmo
+   tempo de uma so de texto. Os controles sao os nativos do navegador, o que
+   mantem a pagina em zero JavaScript. */
+
+figure video {
+  /* Video nasce inline. Sem display block ele ignora margin auto e nao
+     acompanha o alinhamento das imagens. */
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  /* Deixa a altura sair da proporcao dos atributos width/height do <video>,
+     igual acontece com <img>. Sem isto sobra faixa do fundo em volta do
+     poster. */
+  height: auto;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+/* ---------- Midia em pe ----------
+   Foto e video verticais ficariam altos demais ocupando a largura inteira da
+   coluna. Limitar a altura e empurrar pra direita resolve sem quebrar o
+   esquadro: a midia continua fechando na mesma borda direita do texto, da
+   regua e das datas. So a borda esquerda fica solta. */
+
+.media-tall img,
+.media-tall video {
+  max-height: 36rem;
+  width: auto;
+  margin-left: auto;
+}
+
+/* ---------- Citacao ---------- */
+
+.post-body > blockquote {
+  margin-top: 2.25rem;
+  padding-left: 1.15rem;
+  border-left: 2px solid var(--rule);
+  color: var(--display);
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+
+blockquote p + p {
+  margin-top: 0.6rem;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-style: normal;
+}
+
+/* ---------- Codigo ----------
+   Monospace tambem e fonte do sistema: nada baixado. */
+
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: var(--surface);
+  padding: 0.1em 0.25em;
+  border-radius: 4px;
+  /* Sem isto a hifenizacao do paragrafo quebra nomes de arquivo no meio. */
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+.post-body > pre {
+  margin-top: 1.75rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ---------- Nota de margem ----------
+   Vai na coluna vazia da esquerda, encostada no vao, na altura do paragrafo
+   que vem depois dela no HTML. */
+
+.post-body > .note {
+  grid-column: 1;
+  align-self: start;
+  margin-top: 1.4rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
+/* ---------- Fecho da materia ---------- */
+
+.post-foot {
+  padding: clamp(2rem, 5vw, 2.75rem) 0 clamp(2.5rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--rule);
+}
+
+.post-foot .byline {
+  margin-top: 0;
+}
+
+.about {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.post-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+
+footer {
+  padding-bottom: 3rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* ---------- Telas estreitas ----------
+   Mesmos dois breakpoints em rem do index.html. */
+
+@media (max-width: 54rem) {
+  :root {
+    --gap: 1.75rem;
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .block-label {
+    position: static;
+  }
+
+  .post-body {
+    grid-template-columns: 1fr;
+  }
+
+  .post-body > *,
+  .post-body > .wide,
+  .post-body > .note {
+    grid-column: 1;
+  }
+
+  .post-body > .note {
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--rule);
+    text-align: left;
+  }
+
+  /* Numa coluna so, video de celular na largura inteira e o enquadramento
+     certo: a tela ja e estreita e alta igual ao clipe. */
+  .media-tall img,
+  .media-tall video {
+    max-height: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 34rem) {
+  .post-nav {
+    flex-direction: column;
+  }
+}
